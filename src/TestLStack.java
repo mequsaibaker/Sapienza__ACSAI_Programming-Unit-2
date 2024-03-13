@@ -1,4 +1,3 @@
-package src;
 public class TestLStack {
     public static void main(String[] args) {
         // plays with list stacks

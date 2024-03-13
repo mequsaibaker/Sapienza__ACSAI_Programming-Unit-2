@@ -1,4 +1,3 @@
-package src;
 public class IntList {
     // Lists of integers (coarse!)
 

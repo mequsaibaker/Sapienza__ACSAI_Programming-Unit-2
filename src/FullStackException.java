@@ -1,4 +1,3 @@
-package src;
 public class FullStackException extends Exception {
     public int value;
 

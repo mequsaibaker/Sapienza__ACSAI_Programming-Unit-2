@@ -1,4 +1,3 @@
-package src;
 public class TestList {
     public static void main(String[] args) {
         // plays with lists
