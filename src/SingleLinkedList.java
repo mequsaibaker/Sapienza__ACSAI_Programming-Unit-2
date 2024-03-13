@@ -1,3 +1,5 @@
+import org.junit.Test.None;
+
 public class SingleLinkedList {
     private final int LOWER_BOUND_IND = 0;
     private int len;
@@ -30,14 +32,36 @@ public class SingleLinkedList {
             ++len;
         }
     }
+
     public void headRemove () {
         head = head.next();
     }
 
-    private void getNode (int ind) throws LinkedListIndexOutOfBoundException {
+    public void tailRemove () {
+        int before_the_last_ind = len - 2;
+        try {
+            Node n = getNode(before_the_last_ind);
+            n.setNext(null);
+            tail = n;
+        } catch (LinkedListIndexOutOfBoundException e) {
+            System.out.println("LinkedListIndexOutOfBoundException");
+        }
+    }
+
+    public Node getNode (int ind) throws LinkedListIndexOutOfBoundException {
+        return getNode(head, ind);
+    }
+
+    private Node getNode (Node n, int ind) throws LinkedListIndexOutOfBoundException {
         int upper_bound_ind = len - 1;
         if ((ind < LOWER_BOUND_IND) | (ind > upper_bound_ind)) {
             throw new LinkedListIndexOutOfBoundException();
+        }
+
+        if (ind == 0) {
+            return n;
+        } else {
+            return getNode(n.next(), --ind);
         }
     }
 
