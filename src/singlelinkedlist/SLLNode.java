@@ -5,11 +5,11 @@ public class SLLNode {
     private SLLNode next;
 
     //Constructers
-    protected SLLNode(int value) {
+    public SLLNode(int value) {
         this.value = value;
     }
 
-    protected SLLNode(int value, SLLNode next) {
+    public SLLNode(int value, SLLNode next) {
         this.value = value;
         this.next = next;
     }
