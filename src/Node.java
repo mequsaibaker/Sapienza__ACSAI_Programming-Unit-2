@@ -3,22 +3,25 @@ public class Node {
     private Node pre;
     private Node next;
 
+    //Constructors
     public Node(int value) {
         this.value = value;
     }
 
+    //Setters
     public void setPre(Node n) {
-        pre = n;
+        this.pre = n;
     }
     
     public void setNext(Node n) {
-        next = n;
+        this.next = n;
     }
 
     public void setValue(int v) {
-        value = v;
+        this.value = v;
     }
 
+    //Getters
     public Node pre() {
         return this.pre;
     }

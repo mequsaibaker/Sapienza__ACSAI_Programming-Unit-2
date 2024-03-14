@@ -4,11 +4,18 @@ import org.junit.Test;
 
 public class SingleLinkedListTest {
     @Test
-    public void testHeadAppend() {
+    public void testFirstAppendFirstRemove() {
         SingleLinkedList list = new SingleLinkedList();
-        list.headAppend(5);
-        list.headAppend(0);
-        assertEquals(2, list.len());
+        for(int i = 0; i < 10; i++) {
+            list.firstAppend(i);
+        }
+        for(int i = 9; i >=0; i--) {
+            int head_v = list.head().value();
+            assertEquals(head_v, list.headRemove().value());
+        }
+        // list.headAppend(5);
+        // list.headAppend(0);
+        // assertEquals(2, list.len());
     }
 
     @Test
