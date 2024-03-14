@@ -1,7 +1,5 @@
 package singlelinkedlist;
 
-import org.w3c.dom.Node;
-
 public class SLList {
     private final int IND_LOWER_BOUND = 0;
     private int len;
@@ -67,6 +65,11 @@ public class SLList {
         this.head = n;
         this.tail = n;
         ++this.len;
+    }
+
+    //Remove methods
+    public void removeHead() {
+        
     }
 
     //Search methods
