@@ -1,5 +1,5 @@
 package singlelinkedlist;
 
-public class SLLIndexOutOfBoundException {
+public class SLLIndexOutOfBoundException extends Exception {
 
 }

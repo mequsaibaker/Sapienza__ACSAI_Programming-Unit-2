@@ -3,6 +3,7 @@ package singlelinkedlist;
 import org.w3c.dom.Node;
 
 public class SLList {
+    private final int IND_LOWER_BOUND = 0;
     private int len;
     private SLLNode head;
     private SLLNode tail;
@@ -49,6 +50,19 @@ public class SLList {
         }
     }
 
+    public void insert(int v, int ind) {
+        if (ind == 0) {
+            addHead(v);
+        } else if  (ind == len - 1) {
+            addTail(v);
+        } else {
+            SLLNode new_pre = getNode(ind - 1);
+            SLLNode n = new SLLNode(v);
+            n.setNext(new_pre.getNext());
+            new_pre.setNext(n);
+        }
+    }
+
     private void addFirst(SLLNode n) {
         this.head = n;
         this.tail = n;
@@ -56,11 +70,23 @@ public class SLList {
     }
 
     //Search methods
-    private SLLNode getNode(SLLNode start_n, int ind) {
+    public SLLNode getNode(int ind) {
+        try {
+            return getNode(head, ind, len, IND_LOWER_BOUND);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private SLLNode getNode(SLLNode start_n, int ind, int len, int ind_lower_bound)  throws SLLIndexOutOfBoundException {
+        int ind_upper_bound = len - 1;
+        if (ind < ind_lower_bound | ind > ind_upper_bound) {
+            throw new SLLIndexOutOfBoundException();
+        }
         if (ind == 0) {
             return start_n;
         }
-        getNode(start_n.getNext(), --ind);
+        return getNode(start_n.getNext(), --ind, len, ind_lower_bound);
     }
 
     //Setters and Getters
