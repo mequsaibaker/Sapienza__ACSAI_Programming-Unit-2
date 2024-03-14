@@ -36,6 +36,15 @@ public class SLList {
         }
     }
 
+    public void addTail(int v) {
+        SLLNode n = new SLLNode(v);
+        if (len == 0) {
+            this.addFirst(n);
+        } else {
+            
+        }
+    }
+
     private void addFirst(SLLNode n) {
         head = n;
         tail = n;
