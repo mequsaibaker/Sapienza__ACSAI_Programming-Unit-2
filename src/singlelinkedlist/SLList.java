@@ -10,14 +10,36 @@ public class SLList {
 
     }
 
-    public SLList (SLLNode head) {
-        this.head = head;
+    // public SLList (SLLNode head) {
+    //     this.head = head;
+    // }
+
+    public SLList (int[] v_list) {
+        createSLList(v_list);
+    }
+
+    private void createSLList (int[] v_list) {
+        for(int i = v_list.length - 1; i >= 0; i--) {
+            addHead(v_list[i]);
+        }
     }
 
     //Add methods
-    public void addHead(SLLNode n) {
-        n.setNext(head);
+    public void addHead(int v) {
+        SLLNode n = new SLLNode(v);
+        if (len == 0) {
+            this.addFirst(n);
+        } else {
+            n.setNext(head);
+            head = n;
+            ++this.len;
+        }
+    }
+
+    private void addFirst(SLLNode n) {
         head = n;
+        tail = n;
+        ++this.len;
     }
 
     //Setters and Getters
@@ -25,15 +47,15 @@ public class SLList {
         return len;
     }
 
-    // public void setLen(int len) {
-    //     this.len = len;
-    // }
+    private void setLen(int len) {
+        this.len = len;
+    }
 
     public SLLNode getHead() {
         return head;
     }
 
-    public void setHead(SLLNode head) {
+    private void setHead(SLLNode head) {
         this.head = head;
     }
 
@@ -41,7 +63,7 @@ public class SLList {
         return tail;
     }
 
-    public void setTail(SLLNode tail) {
+    private void setTail(SLLNode tail) {
         this.tail = tail;
     }
 }
