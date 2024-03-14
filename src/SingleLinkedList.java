@@ -1,8 +1,3 @@
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-import java.util.LinkedList;
-
 public class SingleLinkedList {
     private final int LOWER_BOUND_IND = 0;
     private int len;
