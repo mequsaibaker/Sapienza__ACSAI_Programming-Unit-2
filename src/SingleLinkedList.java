@@ -167,7 +167,6 @@ public class SingleLinkedList {
 
     public static void main(String[] args) {
         SingleLinkedList list = new SingleLinkedList(new int[]{1,2,3,4,5});
-        SingleLinkedList list2 = new SingleLinkedList(new int[]{10});
         System.out.println(list.toString());
         System.out.println(list.headRemove().value());;
         System.out.println(list.toString());
