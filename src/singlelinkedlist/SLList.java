@@ -30,8 +30,8 @@ public class SLList {
         if (len == 0) {
             this.addFirst(n);
         } else {
-            n.setNext(head);
-            head = n;
+            n.setNext(this.head);
+            this.head = n;
             ++this.len;
         }
     }
@@ -41,13 +41,15 @@ public class SLList {
         if (len == 0) {
             this.addFirst(n);
         } else {
-            
+            this.tail.setNext(n);
+            this.tail = n;
+            ++this.len;
         }
     }
 
     private void addFirst(SLLNode n) {
-        head = n;
-        tail = n;
+        this.head = n;
+        this.tail = n;
         ++this.len;
     }
 
