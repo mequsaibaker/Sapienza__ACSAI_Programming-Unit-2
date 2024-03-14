@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 import org.junit.Test.None;
 
 public class SingleLinkedList {
@@ -6,7 +8,19 @@ public class SingleLinkedList {
     private Node head;
     private Node tail;
 
-    private void firstAppend(int v) {
+    public SingleLinkedList() {
+
+    }
+
+    public SingleLinkedList(int[] list) {
+        createLinkedList(list);
+    }
+
+    public int len() {
+        return len;
+    }
+
+    public void firstAppend(int v) {
         Node n = new Node(v);
         head = n;
         tail = n;
@@ -52,6 +66,20 @@ public class SingleLinkedList {
         return getNode(head, ind);
     }
 
+    @Override
+    public String toString() {
+        String result = print(head);
+        return result;
+    }
+    private String print(Node n) {
+        if (n.next() == null) {
+            System.out.println(n.value());
+        } else {
+            System.out.println(print(n.next()));
+        }
+        return "";
+    }
+
     private Node getNode (Node n, int ind) throws LinkedListIndexOutOfBoundException {
         int upper_bound_ind = len - 1;
         if ((ind < LOWER_BOUND_IND) | (ind > upper_bound_ind)) {
@@ -65,7 +93,16 @@ public class SingleLinkedList {
         }
     }
 
-    public int len() {
-        return len;
+    private void createLinkedList(int[] list) {
+            tailAppend(list[0]);
+            if (list.length > LOWER_BOUND_IND +1) {
+                createLinkedList(Arrays.copyOfRange(list, 1, list.length));
+            }
+    }
+
+    public static void main(String[] args) {
+        SingleLinkedList list = new SingleLinkedList(new int[]{1,2,3,4,5});
+        System.out.println(list.toString());
+        
     }
 }
