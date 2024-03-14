@@ -7,11 +7,11 @@ public class SingleLinkedListTest {
     public void testFirstAppendFirstRemove() {
         SingleLinkedList list = new SingleLinkedList();
         for(int i = 0; i < 10; i++) {
-            list.firstAppend(i);
+            list.headAppend(i);
         }
-        for(int i = 9; i >=0; i--) {
-            int head_v = list.head().value();
-            assertEquals(head_v, list.headRemove().value());
+        for(int i = 0; i < 10; i++) {
+            Node head_v = list.head();
+            assertEquals(head_v, list.headRemove());
         }
         // list.headAppend(5);
         // list.headAppend(0);
