@@ -1,5 +1,7 @@
 package singlelinkedlist;
 
+import org.w3c.dom.Node;
+
 public class SLList {
     private int len;
     private SLLNode head;
@@ -51,6 +53,14 @@ public class SLList {
         this.head = n;
         this.tail = n;
         ++this.len;
+    }
+
+    //Search methods
+    private SLLNode getNode(SLLNode start_n, int ind) {
+        if (ind == 0) {
+            return start_n;
+        }
+        getNode(start_n.getNext(), --ind);
     }
 
     //Setters and Getters
