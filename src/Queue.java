@@ -1,3 +1,6 @@
+/*
+ * developed by Qusai Baker
+ */
 
 public class Queue {
     public static void main(String[] args) { //I tweaked the main method a bit to resolve some syntax errors which were existed in the original main
