@@ -2,11 +2,12 @@
  * developed by Qusai Baker
  */
 /*
- * There are some non-intended accidental syntax issues in the "main" method that is provided in the homework. I resolved the issues and appended the "main" method in my submitted "Queue" class.
+ * There are some non-intended accidental syntax issues in the "main" method that is provided in the homework. I resolved the issues and appended the "main" method in my submitted "Queue" class as a comment, just in case.
  * Kind regards
  */
 
 public class Queue {
+    /* 
     public static void main(String[] args) { 
         // tests queues
         Queue c = new Queue();
@@ -31,6 +32,7 @@ public class Queue {
             System.out.println("excetion caught!");
         }
     }
+    */
 
     DoublyLinkedList list;
 
