@@ -1,9 +1,13 @@
 /*
  * developed by Qusai Baker
  */
+/*
+ * There are some non-intended accidental syntax issues in the "main" method that is provided in the homework. I resolved the issues and appended the "main" method in my submitted "Queue" class.
+ * Kind regards
+ */
 
 public class Queue {
-    public static void main(String[] args) { //I tweaked the main method a bit to resolve some syntax errors which were existed in the original main
+    public static void main(String[] args) { 
         // tests queues
         Queue c = new Queue();
         c.revolution();
