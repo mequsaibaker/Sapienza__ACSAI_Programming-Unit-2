@@ -169,9 +169,9 @@ public class Queue {
     }
 
     //implementing the reuired exceptions
-    private class EmptyQueueException extends EmptyLinkedListException {
+    // public class EmptyQueueException extends EmptyLinkedListException {
 
-    }
+    // }
 
     private class EmptyLinkedListException extends Exception {
 
